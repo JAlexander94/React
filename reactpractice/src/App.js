@@ -1,12 +1,8 @@
 import React from "react";
-import Navbar from "./components/navbar"
+import Counter from "./components/Counter";
 
 function App() {
-  return (
-    <div className="container">
-    <Navbar />
-    </div>
-  );
+  return <Counter />;
 }
 
 export default App;

@@ -1,29 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
+import CardBody from "./CardBody";
 
-class Counter extends React.Component {
-  state = {
-    count: 0
+export default function Counter() {
+  // Here we set the state for count and also create a function to update it.
+  // Set the initial value to -
+  const [count, setCount] = useState(0);
+
+  // Helper function to handle when the user clicks increment
+  const handleIncrement = () => {
+    setCount(count + 1);
   };
 
-  handleIncrement = () => {
-    this.setState({ count: this.state.count + 1 });
-  };
-
-  render() {
-    return (
-      <div className="card text-center">
-        <div className="card-header bg-primary text-white">
-          Click Counter!
-        </div>
-        <div className="card-body">
-          <p className="card-text">Click Count: {this.state.count}</p>
-          <button className="btn btn-primary" onClick={this.handleIncrement}>
-            Increment
-          </button>
-        </div>
-      </div>
-    );
-  }
+  return (
+    <div className="card text-center">
+      <div className="card-header bg-primary text-white">Click Counter!</div>
+      {/* Here we pass two props to CardBody which happen to be the event handlers we created above */}
+      <CardBody
+        count={count}
+        handleIncrement={handleIncrement}
+      />
+    </div>
+  );
 }
-
-export default Counter;

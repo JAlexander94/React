@@ -10,6 +10,9 @@ export default function Counter() {
   const handleIncrement = () => {
     setCount(count + 1);
   };
+  const handleDecrement = () => {
+    setCount(count - 1);
+  };
 
   return (
     <div className="card text-center">
